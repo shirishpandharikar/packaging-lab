@@ -16,7 +16,7 @@ public class PackageServiceImpl implements PackageService {
 	public Box createPackage(BigDecimal maxAllowedWeight, List<Item> items) {
 		
 		if(maxAllowedWeight.doubleValue() > 100) {
-			throw new IllegalArgumentException("Maximum allowed maxAllowedWeight for box is 100");
+			throw new IllegalArgumentException("Maximum allowed weight for box is 100");
 		}
 		
 		if(items == null || items.isEmpty()) {
