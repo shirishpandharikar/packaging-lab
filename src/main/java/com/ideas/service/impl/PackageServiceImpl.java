@@ -62,12 +62,11 @@ public class PackageServiceImpl implements PackageService {
 				List<Integer> pci = previousCombination.getItems();
 				List<Integer> cci = new ArrayList<Integer>(pci);
 				cci.add(currItem.getId());
-				Combination newCombination = createCombination(cw, cc, cci);
+				Combination newCombination = new Combination(cw, cc, cci);
 				combinations.add(newCombination);
 			}
 		}
-		Combination combination = createCombination(currItem.getWeight(),
-				currItem.getCost(), Arrays.asList(currItem.getId()));
+		Combination combination = new Combination(currItem.getWeight(), currItem.getCost(), Arrays.asList(currItem.getId()));
 		combinations.add(combination);
 	}
 
@@ -91,9 +90,5 @@ public class PackageServiceImpl implements PackageService {
 			}
 		}
 		return bestCombination;
-	}
-
-	private Combination createCombination(BigDecimal weight, BigDecimal cost, List<Integer> items) {
-		return new Combination(weight, cost, items);
 	}
 }

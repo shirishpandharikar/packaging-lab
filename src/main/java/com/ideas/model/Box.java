@@ -20,15 +20,7 @@ public class Box {
 		return allowedWeight;
 	}
 
-	public void setAllowedWeight(BigDecimal allowedWeight) {
-		this.allowedWeight = allowedWeight;
-	}
-
 	public List<Integer> getItems() {
 		return items;
-	}
-
-	public void addItems(List<Integer> items) {
-		this.items = items;
 	}
 }
